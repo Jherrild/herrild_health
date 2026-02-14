@@ -13,7 +13,7 @@ in YAML data files and Markdown — no HTML editing needed for content changes.
 ## Structure
 
 ```
-_data/              # Editable content (supplements, FAQ, timing, staging)
+_data/              # Editable content (supplements, FAQ, overrated, timing, staging)
 _tabs/              # Tab pages (home, supplements, exercise, FAQ)
 _layouts/           # Page template with all CSS
 _includes/          # Reusable HTML components

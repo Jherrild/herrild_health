@@ -62,9 +62,10 @@ _layouts/
   default.html                      # Full page template: CSS, nav, tab panels, footer
 
 _includes/
-  supplement-item.html              # Single supplement card (name, dose, detail, note)
+  supplement-item.html              # Single supplement card (name, dose, detail, note, warning)
   faq-list.html                     # FAQ accordion from data array (auto-generates IDs)
   staging-list.html                 # Numbered staging protocol
+  overrated-item.html               # Simple card for overrated supplements (name, detail only)
 
 _tabs/                              # Tab content (Jekyll collection, output: false)
   home.md                           # Welcome / intro
@@ -76,6 +77,7 @@ _tabs/                              # Tab content (Jekyll collection, output: fa
 _data/                              # Structured content (edit these to update the site)
   supplements.yml                   # Core daily stack items
   optional_supplements.yml          # Optional items (NAC / GlyNAC)
+  overrated.yml                     # Overrated supplements to skip
   staging.yml                       # 3-stage onboarding protocol
   timing.yml                        # Morning / evening timing slots
   faq.yml                           # FAQ question/answer pairs
@@ -113,21 +115,15 @@ The FAQ item automatically gets an `id` attribute from the slugified question
 (e.g., `faq-can-i-take-creatine-on-an-empty-stomach`) for cross-linking.
 
 ### Link a supplement item to a specific FAQ
-In the supplement's `detail` field, add an inline link using this pattern:
+In the supplement's `detail` field, use the `goFaq()` helper function:
 ```html
-<a href="#faq-SLUG"
-   onclick="document.getElementById('tab-faq').checked=true;
-            var el=document.getElementById('faq-SLUG');
-            el.open=true;
-            el.classList.remove('highlight');
-            void el.offsetWidth;
-            el.classList.add('highlight');
-            el.scrollIntoView({behavior:'smooth'});
-            return false;">link text</a>
+<a href="#faq-SLUG" onclick="goFaq('faq-SLUG');return false;">link text</a>
 ```
-Replace `SLUG` with the slugified FAQ question. Be tasteful — link naturally from
-existing text (e.g., "Must be the *glycinate form*") rather than adding explicit
-"see FAQ" callouts for every item.
+Replace `SLUG` with the slugified FAQ question (e.g., `is-10-g-of-creatine-too-much`).
+The helper switches to the FAQ tab, clears any previous highlight, opens the target
+accordion, applies a green pulse animation, and smooth-scrolls to it. Be tasteful —
+link naturally from existing text rather than adding explicit "see FAQ" callouts for
+every item.
 
 ### Add a new tab
 1. Create `_tabs/newtab.md` with front matter:
@@ -214,16 +210,29 @@ Renders a single supplement card. Parameters passed via `include`:
 - `item.dose` — dosage string
 - `item.detail` — description text (supports inline HTML for FAQ links)
 - `item.note` — (optional) collapsible research callout with yellow styling
+- `item.warning` — (optional) yellow warning callout rendered inside the card
+
+### overrated-item.html
+Renders a simple card for the "Overrated: Skip These" section. Only uses:
+- `item.name` — supplement name
+- `item.detail` — explanation of why it's overrated
 
 ### faq-list.html
 Renders `<details>` accordion items with auto-generated `id` attributes.
 Pass `items` array where each has `question` and `answer` keys. The `id` is
 the slugified question (e.g., `faq-do-i-still-need-melatonin-if-i-sleep-fine`).
 Supports `.highlight` class for green pulse animation on cross-link navigation.
+FAQ answers support inline HTML including `<div class="brand-card">` for
+structured brand recommendations.
 
 ### staging-list.html
 Renders a bordered step list. Pass `stages` array where each has
 `label` and `items` keys.
+
+### goFaq() helper (JavaScript)
+Defined in `_layouts/default.html`. Switches to the FAQ tab, clears all
+previous `.highlight` classes, opens the target `<details>`, applies the
+pulse animation, and smooth-scrolls. Called via `onclick="goFaq('faq-SLUG');return false;"`.
 
 ## References & Research Standards
 - Supplement notes should cite peer-reviewed sources where possible
