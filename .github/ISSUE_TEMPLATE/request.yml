@@ -1,0 +1,34 @@
+name: Request Information
+description: Ask me to cover a topic or add something to the site.
+title: "[Request] "
+labels: ["request"]
+body:
+  - type: dropdown
+    id: subject
+    attributes:
+      label: Subject
+      description: What area does this relate to?
+      options:
+        - General
+        - Supplements
+        - Exercise
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: What would you like to know?
+      description: Be as specific as you'd like — a supplement, a protocol, a question you have, anything.
+      placeholder: "e.g., What do you think about vitamin D? Is there a best time to take fish oil?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Any context? (optional)
+      description: Anything else that might help — your goals, current routine, where you heard about it, etc.
+      placeholder: "e.g., I saw an ad for this on Instagram and wanted to know if it's legit."
+    validations:
+      required: false

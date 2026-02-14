@@ -487,6 +487,35 @@
       color: var(--text-secondary);
     }
 
+    /* ── Request Button ── */
+    .request-bar {
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .request-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: var(--card-bg);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: all 0.2s ease;
+    }
+
+    .request-link:hover {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(46, 125, 82, 0.20);
+    }
+
     /* ── Mobile ── */
     @media (max-width: 480px) {
       body {
@@ -544,6 +573,12 @@
         </div>
       </section>
       {% endfor %}
+    </div>
+
+    <div class="request-bar">
+      <a href="https://github.com/Jherrild/herrild_health/issues/new?template=request.yml"
+         target="_blank"
+         class="request-link">💬 Request a topic</a>
     </div>
 
     <footer class="site-footer">
