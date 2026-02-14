@@ -383,6 +383,16 @@
       content: "−";
     }
 
+    .faq-item.highlight {
+      animation: faq-pulse 1.5s ease-out;
+    }
+
+    @keyframes faq-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(46, 125, 82, 0.4); }
+      40% { box-shadow: 0 0 0 8px rgba(46, 125, 82, 0.15); }
+      100% { box-shadow: 0 0 0 0 rgba(46, 125, 82, 0); }
+    }
+
     .faq-item .faq-answer {
       padding: 0 16px 14px;
       font-size: 0.85rem;

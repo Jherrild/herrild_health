@@ -5,7 +5,7 @@
     upregulates the body's natural glutathione production. Don't bother buying
     glutathione supplements directly — oral glutathione has poor bioavailability,
     and NAC + glycine are far cheaper and more effective as precursors.
-    See the <a href="#faq-who-should-consider-taking-nac" onclick="document.getElementById('tab-faq').checked=true;var el=document.getElementById('faq-who-should-consider-taking-nac');el.open=true;el.scrollIntoView({behavior:'smooth'});return false;">FAQ</a>
+    See the <a href="#faq-who-should-consider-taking-nac" onclick="document.getElementById('tab-faq').checked=true;var el=document.getElementById('faq-who-should-consider-taking-nac');el.open=true;el.classList.remove('highlight');void el.offsetWidth;el.classList.add('highlight');el.scrollIntoView({behavior:'smooth'});return false;">FAQ</a>
     for who should consider adding NAC.
   warning: >
     ⚠️ NAC tastes and smells like sulfur. Most people take it in capsule form.
