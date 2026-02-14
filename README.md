@@ -6,23 +6,33 @@ Personal health knowledge base — supplements, exercise, and wellness protocols
 
 ## About
 
-A simple, single-page site for documenting my current supplement stack, exercise
-routines, and evolving understanding of health and wellness. Built as a static
-GitHub Pages site with CSS-only tab navigation.
+A single-page Jekyll site for documenting my current supplement stack, exercise
+routines, and evolving understanding of health and wellness. Content is authored
+in YAML data files and Markdown — no HTML editing needed for content changes.
 
 ## Structure
 
 ```
-index.html          # Single-page site with CSS tab navigation
+_data/              # Editable content (supplements, FAQ, timing, staging)
+_tabs/              # Tab pages (home, supplements, exercise, FAQ)
+_layouts/           # Page template with all CSS
+_includes/          # Reusable HTML components
+_config.yml         # Jekyll configuration
+index.html          # Jekyll entry point
 CNAME               # Custom domain config (health.herrild.net)
 .github/workflows/  # GitHub Actions for auto-deploy on push to main
 prd/                # Product requirement documents
 ```
 
-## Development
+## Local Development
 
-Edit `index.html` and push to `main` — GitHub Actions will auto-deploy to
-GitHub Pages. No build step required.
+```bash
+cd ~/repos/herrild_health && export PATH="/opt/homebrew/opt/ruby/bin:$PATH" && bundle exec jekyll serve
+```
+
+Then open **http://127.0.0.1:4000** to preview. The server auto-reloads on file changes.
+
+First-time setup: `bundle install` (requires Ruby via Homebrew).
 
 ## Custom Domain
 

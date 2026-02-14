@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ site.description }}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg-gradient-start: #e8f5e9;
+      --bg-gradient-end: #c8e6c9;
+      --accent: #2e7d52;
+      --accent-soft: rgba(46, 125, 82, 0.10);
+      --accent-hover: #1b5e3b;
+      --card-bg: #ffffff;
+      --text-main: #333333;
+      --text-secondary: #666666;
+      --border-light: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 32px 16px;
+      color: var(--text-main);
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 640px;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .site-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .site-header .tagline {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+    }
+
+    /* ── Tab Navigation ── */
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 20px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tab-nav input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+    }
+
+    .tab-nav label {
+      flex: 1;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .tab-nav label:hover {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .tab-nav input[type="radio"]:checked + label {
+      background: rgba(0, 0, 0, 0.06);
+      color: var(--accent);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      font-weight: 600;
+    }
+
+    /* ── Tab Panels ── */
+    .tab-content {
+      position: relative;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    {% assign sorted_tabs = site.tabs | sort: "order" %}
+    {% if jekyll.environment == "production" %}
+      {% assign visible_tabs = "" | split: "" %}
+      {% for tab in sorted_tabs %}
+        {% unless tab.dev_only %}
+          {% assign visible_tabs = visible_tabs | push: tab %}
+        {% endunless %}
+      {% endfor %}
+    {% else %}
+      {% assign visible_tabs = sorted_tabs %}
+    {% endif %}
+    {% for tab in visible_tabs %}
+    .wrapper:has(#tab-{{ tab.slug }}:checked) .panel-{{ tab.slug }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}{
+      display: block;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      top: -80px;
+      right: -80px;
+      background: radial-gradient(circle at center, var(--accent-soft), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+    }
+
+    .card p + p {
+      margin-top: 12px;
+    }
+
+    /* ── Status Tag ── */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(46, 125, 82, 0.20);
+    }
+
+    /* ── Section List ── */
+    .section-list {
+      list-style: none;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-list li {
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .section-list li + li {
+      margin-top: 8px;
+    }
+
+    .section-list li strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* ── Card Content (rendered markdown) ── */
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-content ul {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .card-content ul li {
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .card-content ul li + li {
+      margin-top: 8px;
+    }
+
+    .card-content ul li strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
+    /* ── Supplement Groups ── */
+    .supplement-group {
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .supplement-group h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .supplement-item {
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .supplement-item strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .supplement-item .dose {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .supplement-item .detail {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.82rem;
+    }
+
+    /* ── Fact-check Note ── */
+    .note {
+      margin-top: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fff8e1;
+      border-left: 3px solid #f9a825;
+      font-size: 0.82rem;
+      color: #6d5b00;
+    }
+
+    .note a {
+      color: #5d4e00;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba(93, 78, 0, 0.3);
+      text-underline-offset: 2px;
+    }
+
+    .note a:hover {
+      text-decoration-color: #5d4e00;
+    }
+
+    /* ── Collapsible Notes ── */
+    .note-collapsible {
+      margin-top: 8px;
+    }
+
+    .note-collapsible .note {
+      margin-top: 6px;
+    }
+
+    /* ── Brand Cards ── */
+    .brand-card {
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.7);
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .brand-card strong { color: var(--text-main); }
+
+    .brand-card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .brand-card a:hover { text-decoration: underline; }
+
+    .brand-role {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .brand-use {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .note-toggle {
+      display: block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: var(--accent-soft);
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+      transition: background 0.2s ease;
+    }
+
+    .note-toggle::-webkit-details-marker {
+      display: none;
+    }
+
+    .note-toggle::before {
+      content: "▸ ";
+    }
+
+    .note-collapsible[open] .note-toggle::before {
+      content: "▾ ";
+    }
+
+    .note-toggle:hover {
+      background: rgba(46, 125, 82, 0.16);
+    }
+
+    /* ── Staging Protocol ── */
+    .staging-list {
+      list-style: none;
+      margin-top: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .staging-list li {
+      padding: 10px 16px;
+      border-left: 3px solid var(--accent);
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      background: rgba(46, 125, 82, 0.04);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .staging-list li strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* ── FAQ Accordion ── */
+    .faq-item {
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-item summary {
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+      cursor: pointer;
+      list-style: none;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::before {
+      content: "＋";
+      margin-right: 8px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .faq-item[open] summary::before {
+      content: "−";
+    }
+
+    .faq-item.highlight {
+      animation: faq-pulse 1.5s ease-out;
+    }
+
+    @keyframes faq-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(46, 125, 82, 0.4); }
+      40% { box-shadow: 0 0 0 8px rgba(46, 125, 82, 0.15); }
+      100% { box-shadow: 0 0 0 0 rgba(46, 125, 82, 0); }
+    }
+
+    .faq-item .faq-answer {
+      padding: 0 16px 14px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .site-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .tab-nav label {
+        padding: 8px 10px;
+        font-size: 0.78rem;
+      }
+
+      .card {
+        padding: 22px 18px;
+        border-radius: 20px;
+      }
+
+      .card h2 {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1>{{ site.title }}</h1>
+      <p class="tagline">Supplements · Exercise · Wellness</p>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+      {% for tab in visible_tabs %}
+      <input type="radio" name="tabs" id="tab-{{ tab.slug }}"{% if tab.default %} checked{% endif %} />
+      <label for="tab-{{ tab.slug }}">{{ tab.tab_label }}</label>
+      {% endfor %}
+    </nav>
+
+    <!-- Tab Content Panels -->
+    <div class="tab-content">
+      {% for tab in visible_tabs %}
+      <section class="tab-panel panel-{{ tab.slug }}">
+        <div class="card">
+          {% if tab.tag %}
+          <div class="tag">
+            <span class="tag-dot"></span>
+            <span>{{ tab.tag }}</span>
+          </div>
+          {% endif %}
+          <h2>{{ tab.title }}</h2>
+          {{ tab.content }}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+
+    <footer class="site-footer">
+      &copy; {{ 'now' | date: '%Y' }} {{ site.title }}
+    </footer>
+  </div>
+  <script>
+  function goFaq(id){
+    document.getElementById('tab-faq').checked=true;
+    document.querySelectorAll('.faq-item.highlight').forEach(function(e){e.classList.remove('highlight')});
+    var el=document.getElementById(id);
+    el.open=true;
+    void el.offsetWidth;
+    el.classList.add('highlight');
+    el.scrollIntoView({behavior:'smooth'});
+  }
+  </script>
+</body>
+</html>

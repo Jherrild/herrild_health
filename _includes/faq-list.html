@@ -1,0 +1,6 @@
+{% for item in include.items %}
+<details class="faq-item" id="faq-{{ item.question | slugify }}">
+  <summary>{{ item.question }}</summary>
+  <div class="faq-answer">{{ item.answer }}</div>
+</details>
+{% endfor %}

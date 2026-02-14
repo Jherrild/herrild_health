@@ -1,0 +1,69 @@
+- name: Omega-3 (EPA + DHA)
+  dose: 1,200–2,400 mg/day
+  detail: >
+    Split across two doses (morning and evening). Look for supplements
+    that list EPA and DHA content specifically.
+
+- name: Creatine Monohydrate
+  dose: 10 g/day
+  detail: >
+    Take in the morning. On days after poor sleep, 15–20 g may help offset
+    cognitive effects of sleep deprivation. Increases intracellular fluid,
+    reduces rest needed between sets, and slightly increases working volume
+    during lifting.
+    <a href="#faq-is-10-g-of-creatine-too-much" onclick="goFaq('faq-is-10-g-of-creatine-too-much');return false;">Why 10 g?</a>
+  note: >
+    📋 Note on dosing: The standard 3–5 g/day dose is sufficient to saturate
+    muscle stores, and higher doses don't provide additional exercise performance
+    benefits. However, the brain absorbs creatine more slowly due to the
+    blood-brain barrier, and recent research targeting sleep deprivation
+    resilience, cognitive stress, and age-related cognitive decline has found
+    that higher doses (10–20 g/day) produce more robust cognitive improvements.
+    A <a href="https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1424972/full" target="_blank">2024 systematic review</a>
+    of 16 RCTs found significant positive effects on memory and attention,
+    especially under cognitive stress. Sleep deprivation studies using
+    <a href="https://neurosciencenews.com/creatine-cognition-sleep-deprivation-25982/" target="_blank">acute high-dose creatine</a>
+    showed improved processing capacity for up to 9 hours. A
+    <a href="https://www.tandfonline.com/doi/pdf/10.1080/15502783.2025.2550206" target="_blank">2025 Texas A&amp;M RCT</a>
+    further supports high-dose protocols for cognitive targets. If your goal is
+    purely exercise performance, 5 g/day is sufficient. If you're targeting
+    cognitive wellness, the emerging evidence supports a higher dose.
+
+- name: Melatonin
+  dose: 5 mg before bed
+  detail: >
+    Supports sleep onset. Not strictly necessary if you
+    <a href="#faq-do-i-still-need-melatonin-if-i-sleep-fine" onclick="goFaq('faq-do-i-still-need-melatonin-if-i-sleep-fine');return false;">already sleep well</a>.
+  note: >
+    📋 Note on dosing: Many sleep researchers (including MIT's Richard Wurtman,
+    who pioneered melatonin research) suggest 0.3–1 mg is more physiologically
+    appropriate for sleep onset alone. However, melatonin appears to be very safe
+    even at much higher doses. A
+    <a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/jpi.12782" target="_blank">systematic review in the Journal of Pineal Research</a>
+    found that high-dose melatonin (≥10 mg, up to 50+ mg) is well-tolerated with
+    only mild side effects (drowsiness, headache). Importantly, available evidence
+    shows <a href="https://www.lifeextension.com/magazine/2022/7/higher-dose-melatonin" target="_blank">no downregulation of endogenous melatonin production</a>
+    — the body resumes normal secretion after discontinuation. Higher doses have
+    also been shown to
+    <a href="https://academic.oup.com/jcemcr/article/3/2/luaf006/7985317" target="_blank">stimulate growth hormone (HGH) release</a>,
+    likely by suppressing somatostatin at the hypothalamic level. So while lower
+    doses may suffice for sleep, 5 mg is well within the safe range and may offer
+    additional hormonal benefits.
+
+- name: Magnesium Glycinate
+  dose: 400 mg/day
+  detail: >
+    Take in the evening.
+    <a href="#faq-why-does-it-have-to-be-magnesium-glycinate-specifically" onclick="goFaq('faq-why-does-it-have-to-be-magnesium-glycinate-specifically');return false;">Must be the glycinate form</a>
+    — other forms (oxide, citrate) have different absorption profiles and are
+    more likely to cause GI issues.
+
+- name: Glycine
+  dose: 4+ g before bed
+  detail: >
+    Ideally taken ~1 hour before sleep. Supports sleep quality by causing a
+    small drop in core body temperature. Also participates in
+    <a href="#faq-if-i-take-glycine-do-i-still-need-a-collagen-supplement" onclick="goFaq('faq-if-i-take-glycine-do-i-still-need-a-collagen-supplement');return false;">collagen production</a>
+    (skin and joint health) and endogenous antioxidant production. Tastes mildly
+    sweet — can be mixed into beverages like hot chocolate as a partial sugar
+    replacement.
