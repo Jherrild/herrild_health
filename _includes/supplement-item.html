@@ -7,4 +7,7 @@
     <div class="note">{{ include.item.note }}</div>
   </details>
   {% endif %}
+  {% if include.item.warning %}
+  <div class="note" style="margin-top: 8px;">{{ include.item.warning }}</div>
+  {% endif %}
 </div>
