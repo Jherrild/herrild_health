@@ -512,5 +512,16 @@
       &copy; {{ 'now' | date: '%Y' }} {{ site.title }}
     </footer>
   </div>
+  <script>
+  function goFaq(id){
+    document.getElementById('tab-faq').checked=true;
+    document.querySelectorAll('.faq-item.highlight').forEach(function(e){e.classList.remove('highlight')});
+    var el=document.getElementById(id);
+    el.open=true;
+    void el.offsetWidth;
+    el.classList.add('highlight');
+    el.scrollIntoView({behavior:'smooth'});
+  }
+  </script>
 </body>
 </html>

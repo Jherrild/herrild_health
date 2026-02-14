@@ -8,7 +8,7 @@ order: 2
 <p>
   These are supplements I believe nearly everyone can take safely, with well-studied benefits.
   This is not medical advice — do your own research and consult a healthcare professional.
-  See the <a href="#faq-where-can-i-buy-these-supplements" onclick="document.getElementById('tab-faq').checked=true;var el=document.getElementById('faq-where-can-i-buy-these-supplements');el.open=true;el.classList.remove('highlight');void el.offsetWidth;el.classList.add('highlight');el.scrollIntoView({behavior:'smooth'});return false;">recommended brands</a> in the FAQ.
+  See the <a href="#faq-where-can-i-buy-these-supplements" onclick="goFaq('faq-where-can-i-buy-these-supplements');return false;">recommended brands</a> in the FAQ.
 </p>
 
 <div class="supplement-group">
