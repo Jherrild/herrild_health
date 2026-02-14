@@ -45,7 +45,7 @@ order: 2
 </div>
 
 <div class="supplement-group">
-  <h3>🔴 Skip These</h3>
+  <h3>🔴 Overrated: Skip These</h3>
   <p style="font-size: 0.88rem; margin-bottom: 10px; color: var(--text-secondary); position: relative; z-index: 1;">
     Popular supplements that are either expensive wastes of money, carry real
     health risks, or both. Save your cash.
