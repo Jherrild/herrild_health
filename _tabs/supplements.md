@@ -21,11 +21,6 @@ order: 2
   <h3>🟡 Optional: GlyNAC Stack</h3>
   {% for item in site.data.optional_supplements %}
     {% include supplement-item.html item=item %}
-    {% if item.who %}
-    <p style="margin-top: 8px; font-size: 0.85rem; position: relative; z-index: 1;">
-      <strong>Who should consider {{ item.name | split: ' (' | first }}:</strong> {{ item.who }}
-    </p>
-    {% endif %}
     {% if item.warning %}
     <div class="note" style="margin-top: 12px;">{{ item.warning }}</div>
     {% endif %}

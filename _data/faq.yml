@@ -6,9 +6,17 @@
 
 - question: If I take glycine, do I still need a collagen supplement?
   answer: >
-    Glycine is one of the primary amino acids in collagen (~33%) and upregulates
-    collagen production and turnover. It may reduce or eliminate the need for a
-    separate collagen supplement, particularly for skin and joint health benefits.
+    For skin health, probably not. Glycine is one of the primary amino acids in
+    collagen (~33%) and upregulates collagen production and turnover — so 4+ g of
+    glycine likely covers skin benefits. However, for joint health or connective
+    tissue recovery, a dedicated collagen supplement at higher doses (10–15 g/day)
+    may still be worthwhile. Studies using
+    <a href="https://www.mdpi.com/2072-6643/15/6/1332" target="_blank">radioisotope-labeled collagen</a>
+    have shown that ingested collagen peptides do appear in joint cartilage and
+    connective tissue, though only a fraction of the oral dose reaches these
+    sites. The effective studied range for joint benefits is 10–15 g/day of
+    hydrolyzed collagen. Glycine at 4 g alone is unlikely to deliver enough
+    material for significant joint tissue repair.
 
 - question: Should I just buy glutathione directly?
   answer: >
@@ -40,10 +48,13 @@
 
 - question: Is 10 g of creatine too much?
   answer: >
-    The most well-established maintenance dose in the scientific literature is
-    3–5 g/day. 10 g is higher than typical recommendations but is not considered
-    dangerous. Some studies exploring cognitive benefits have used higher doses.
-    If you're unsure, 5 g/day is a safe and well-supported starting point.
+    For exercise performance, 3–5 g/day is sufficient — that's where muscle
+    stores saturate. However, the brain absorbs creatine more slowly due to the
+    blood-brain barrier, and recent cognitive studies use higher doses. A
+    <a href="https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1424972/full" target="_blank">2024 systematic review</a>
+    of 16 RCTs found significant cognitive improvements at higher doses,
+    especially under stress. If you're targeting cognitive wellness, the emerging
+    evidence supports 10+ g. If unsure, 5 g/day is a safe starting point.
     Creatine monohydrate is the most studied form.
 
 - question: I work night shifts — when should I take everything?
@@ -59,3 +70,14 @@
     Specific product links are coming soon. In general, look for reputable brands
     with third-party testing. For creatine, use monohydrate (the most studied
     form). For omega-3, check that EPA and DHA amounts are listed on the label.
+
+- question: Who should consider taking NAC?
+  answer: >
+    NAC is primarily recommended for adults over 40. Research shows the body's
+    natural glutathione production declines with age, and GlyNAC supplementation
+    (glycine + NAC) has been shown to improve cognition and reduce oxidative
+    stress in older adults
+    (<a href="https://link.springer.com/article/10.1007/s11357-021-00309-1" target="_blank">Sekhar et al., Baylor College of Medicine</a>).
+    Younger adults probably don't need it, but can trial it if the core stack
+    alone doesn't feel sufficient. Always take NAC with glycine — glycine buffers
+    NAC and provides the other precursor needed for glutathione synthesis.
