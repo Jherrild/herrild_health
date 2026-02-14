@@ -124,7 +124,17 @@
     }
 
     {% assign sorted_tabs = site.tabs | sort: "order" %}
-    {% for tab in sorted_tabs %}
+    {% if jekyll.environment == "production" %}
+      {% assign visible_tabs = "" | split: "" %}
+      {% for tab in sorted_tabs %}
+        {% unless tab.dev_only %}
+          {% assign visible_tabs = visible_tabs | push: tab %}
+        {% endunless %}
+      {% endfor %}
+    {% else %}
+      {% assign visible_tabs = sorted_tabs %}
+    {% endif %}
+    {% for tab in visible_tabs %}
     .wrapper:has(#tab-{{ tab.slug }}:checked) .panel-{{ tab.slug }}{% unless forloop.last %},{% endunless %}
     {% endfor %}{
       display: block;
@@ -465,7 +475,7 @@
 
     <!-- Tab Navigation -->
     <nav class="tab-nav">
-      {% for tab in sorted_tabs %}
+      {% for tab in visible_tabs %}
       <input type="radio" name="tabs" id="tab-{{ tab.slug }}"{% if tab.default %} checked{% endif %} />
       <label for="tab-{{ tab.slug }}">{{ tab.tab_label }}</label>
       {% endfor %}
@@ -473,7 +483,7 @@
 
     <!-- Tab Content Panels -->
     <div class="tab-content">
-      {% for tab in sorted_tabs %}
+      {% for tab in visible_tabs %}
       <section class="tab-panel panel-{{ tab.slug }}">
         <div class="card">
           {% if tab.tag %}
