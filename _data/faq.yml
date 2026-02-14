@@ -71,20 +71,21 @@
     Here are the brands I'd recommend, ordered from cheapest to most expensive:<br><br>
     <div class="brand-card">
       <strong><a href="https://www.bulksupplements.com" target="_blank">BulkSupplements</a></strong>
-      <span class="brand-role">Lowest cost ⚠️</span>
+      <span class="brand-role">Where I buy bulk powders</span>
       <span class="detail">Huge selection, single-ingredient focus, NSF/GMP-certified facility.
-      However: CoAs aren't published (must be requested), ConsumerLab found a ~28%
-      failure rate across 18 tested products, and they faced a 2024 mislabeling
-      lawsuit. Fine for simple commodity powders (creatine, glycine) where purity
-      is hard to fake. I'd avoid them for fish oil or anything where contamination
-      risk matters.</span>
-      <span class="brand-use">Use for: creatine, glycine (commodity powders only)</span>
+      The place I buy bulk powders like protein and creatine.</span>
+      <span class="brand-use">Use for: creatine, glycine, protein powder</span>
+      <div class="note" style="margin-top: 8px;">⚠️ CoAs aren't published (must be requested), ConsumerLab found
+      a ~28% failure rate across 18 tested products, and they faced a 2024
+      mislabeling lawsuit. Fine for simple commodity powders where purity is hard
+      to fake. I'd avoid them for fish oil or anything where contamination risk
+      matters.</div>
     </div>
     <div class="brand-card">
       <strong><a href="https://www.nutricost.com" target="_blank">Nutricost</a></strong>
       <span class="brand-role">Best value</span>
       <span class="detail">GMP facility, third-party lab verified, clear labeling. Competitive
-      pricing without the controversy. My default recommendation for bulk powders.</span>
+      pricing with a clean track record.</span>
       <span class="brand-use">Use for: creatine monohydrate, glycine powder</span>
     </div>
     <div class="brand-card">
