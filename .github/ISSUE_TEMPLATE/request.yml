@@ -2,6 +2,8 @@ name: Request Information
 description: Ask me to cover a topic or add something to the site.
 title: "[Request] "
 labels: ["request"]
+assignees:
+  - Jherrild
 body:
   - type: dropdown
     id: subject
@@ -9,9 +11,9 @@ body:
       label: Subject
       description: What area does this relate to?
       options:
-        - General
         - Supplements
         - Exercise
+        - Other
     validations:
       required: true
 
