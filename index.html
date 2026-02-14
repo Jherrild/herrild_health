@@ -77,10 +77,16 @@
       border-radius: 16px;
       padding: 6px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
     }
 
     .tab-nav input[type="radio"] {
-      display: none;
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
     }
 
     .tab-nav label {
@@ -102,9 +108,10 @@
     }
 
     .tab-nav input[type="radio"]:checked + label {
-      background: var(--accent);
-      color: #ffffff;
-      box-shadow: 0 4px 12px rgba(46, 125, 82, 0.25);
+      background: rgba(0, 0, 0, 0.06);
+      color: var(--accent);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      font-weight: 600;
     }
 
     /* ── Tab Panels ── */
@@ -116,9 +123,9 @@
       display: none;
     }
 
-    #tab-home:checked ~ .tab-content .panel-home,
-    #tab-supplements:checked ~ .tab-content .panel-supplements,
-    #tab-exercise:checked ~ .tab-content .panel-exercise {
+    .wrapper:has(#tab-home:checked) .panel-home,
+    .wrapper:has(#tab-supplements:checked) .panel-supplements,
+    .wrapper:has(#tab-exercise:checked) .panel-exercise {
       display: block;
     }
 
@@ -258,16 +265,15 @@
       <p class="tagline">Supplements · Exercise · Wellness</p>
     </header>
 
-    <!-- Tab Radio Inputs -->
-    <input type="radio" name="tabs" id="tab-home" checked />
-    <input type="radio" name="tabs" id="tab-supplements" />
-    <input type="radio" name="tabs" id="tab-exercise" />
-
     <!-- Tab Navigation -->
     <nav class="tab-nav">
+      <input type="radio" name="tabs" id="tab-home" checked />
       <label for="tab-home">Home</label>
+      <input type="radio" name="tabs" id="tab-supplements" />
       <label for="tab-supplements">Supplement Stack</label>
+      <input type="radio" name="tabs" id="tab-exercise" />
       <label for="tab-exercise">Exercise</label>
+    </nav>
     </nav>
 
     <!-- Tab Content Panels -->
