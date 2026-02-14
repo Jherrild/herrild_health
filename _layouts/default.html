@@ -345,12 +345,17 @@
     }
 
     .note-toggle {
+      display: block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: var(--accent-soft);
+      border-radius: 8px;
       font-size: 0.78rem;
       font-weight: 500;
       color: var(--accent);
       cursor: pointer;
       list-style: none;
-      padding: 4px 0;
+      transition: background 0.2s ease;
     }
 
     .note-toggle::-webkit-details-marker {
@@ -363,6 +368,10 @@
 
     .note-collapsible[open] .note-toggle::before {
       content: "▾ ";
+    }
+
+    .note-toggle:hover {
+      background: rgba(46, 125, 82, 0.16);
     }
 
     /* ── Staging Protocol ── */
