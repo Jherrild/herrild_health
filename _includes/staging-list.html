@@ -1,0 +1,5 @@
+<ul class="staging-list">
+  {% for stage in include.stages %}
+  <li><strong>{{ stage.label }}</strong> {{ stage.items }}</li>
+  {% endfor %}
+</ul>

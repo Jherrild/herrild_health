@@ -1,0 +1,14 @@
+- name: NAC (N-Acetyl Cysteine)
+  dose: 0.5–1 g/day
+  detail: >
+    Always take with glycine (glycine buffers NAC). Combined with glycine,
+    upregulates the body's natural glutathione production. Don't bother buying
+    glutathione supplements directly — oral glutathione has poor bioavailability,
+    and NAC + glycine are far cheaper and more effective as precursors.
+  who: >
+    Recommended for adults over 40, as research shows glutathione production
+    declines with age. GlyNAC supplementation has been shown to improve cognition
+    in older adults (Sekhar et al., Baylor College of Medicine). Younger adults
+    can try it if the core stack alone doesn't feel sufficient.
+  warning: >
+    ⚠️ NAC tastes and smells like sulfur. Most people take it in capsule form.

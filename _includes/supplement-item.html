@@ -1,0 +1,7 @@
+<div class="supplement-item">
+  <strong>{{ include.item.name }}</strong> — <span class="dose">{{ include.item.dose }}</span>
+  <span class="detail">{{ include.item.detail }}</span>
+  {% if include.item.note %}
+  <div class="note">{{ include.item.note }}</div>
+  {% endif %}
+</div>

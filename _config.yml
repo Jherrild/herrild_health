@@ -1,0 +1,24 @@
+title: Herrild Health
+description: Personal health knowledge base — supplements, exercise, and wellness protocols.
+url: https://health.herrild.net
+
+# Collections
+collections:
+  tabs:
+    output: false
+
+# Build
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - prd/
+  - content/
+  - node_modules/
+  - "*.txt"
