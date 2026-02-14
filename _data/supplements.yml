@@ -11,6 +11,7 @@
     cognitive effects of sleep deprivation. Increases intracellular fluid,
     reduces rest needed between sets, and slightly increases working volume
     during lifting.
+    <a href="#faq-is-10-g-of-creatine-too-much" onclick="document.getElementById('tab-faq').checked=true;var el=document.getElementById('faq-is-10-g-of-creatine-too-much');el.open=true;el.classList.remove('highlight');void el.offsetWidth;el.classList.add('highlight');el.scrollIntoView({behavior:'smooth'});return false;">Why 10 g?</a>
   note: >
     📋 Note on dosing: The standard 3–5 g/day dose is sufficient to saturate
     muscle stores, and higher doses don't provide additional exercise performance
@@ -31,7 +32,8 @@
 - name: Melatonin
   dose: 5 mg before bed
   detail: >
-    Supports sleep onset. Not strictly necessary if you already sleep well.
+    Supports sleep onset. Not strictly necessary if you
+    <a href="#faq-do-i-still-need-melatonin-if-i-sleep-fine" onclick="document.getElementById('tab-faq').checked=true;var el=document.getElementById('faq-do-i-still-need-melatonin-if-i-sleep-fine');el.open=true;el.classList.remove('highlight');void el.offsetWidth;el.classList.add('highlight');el.scrollIntoView({behavior:'smooth'});return false;">already sleep well</a>.
   note: >
     📋 Note on dosing: Many sleep researchers (including MIT's Richard Wurtman,
     who pioneered melatonin research) suggest 0.3–1 mg is more physiologically
@@ -51,15 +53,17 @@
 - name: Magnesium Glycinate
   dose: 400 mg/day
   detail: >
-    Take in the evening. Must be the glycinate form — other forms (oxide,
-    citrate) have different absorption profiles and are more likely to cause
-    GI issues.
+    Take in the evening.
+    <a href="#faq-why-does-it-have-to-be-magnesium-glycinate-specifically" onclick="document.getElementById('tab-faq').checked=true;var el=document.getElementById('faq-why-does-it-have-to-be-magnesium-glycinate-specifically');el.open=true;el.classList.remove('highlight');void el.offsetWidth;el.classList.add('highlight');el.scrollIntoView({behavior:'smooth'});return false;">Must be the glycinate form</a>
+    — other forms (oxide, citrate) have different absorption profiles and are
+    more likely to cause GI issues.
 
 - name: Glycine
   dose: 4+ g before bed
   detail: >
     Ideally taken ~1 hour before sleep. Supports sleep quality by causing a
-    small drop in core body temperature. Also participates in collagen production
+    small drop in core body temperature. Also participates in
+    <a href="#faq-if-i-take-glycine-do-i-still-need-a-collagen-supplement" onclick="document.getElementById('tab-faq').checked=true;var el=document.getElementById('faq-if-i-take-glycine-do-i-still-need-a-collagen-supplement');el.open=true;el.classList.remove('highlight');void el.offsetWidth;el.classList.add('highlight');el.scrollIntoView({behavior:'smooth'});return false;">collagen production</a>
     (skin and joint health) and endogenous antioxidant production. Tastes mildly
     sweet — can be mixed into beverages like hot chocolate as a partial sugar
     replacement.

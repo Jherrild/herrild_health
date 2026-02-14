@@ -2,6 +2,9 @@
   <strong>{{ include.item.name }}</strong> — <span class="dose">{{ include.item.dose }}</span>
   <span class="detail">{{ include.item.detail }}</span>
   {% if include.item.note %}
-  <div class="note">{{ include.item.note }}</div>
+  <details class="note-collapsible">
+    <summary class="note-toggle">📋 More info & research</summary>
+    <div class="note">{{ include.item.note }}</div>
+  </details>
   {% endif %}
 </div>

@@ -325,6 +325,36 @@
       text-decoration-color: #5d4e00;
     }
 
+    /* ── Collapsible Notes ── */
+    .note-collapsible {
+      margin-top: 8px;
+    }
+
+    .note-collapsible .note {
+      margin-top: 6px;
+    }
+
+    .note-toggle {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+      padding: 4px 0;
+    }
+
+    .note-toggle::-webkit-details-marker {
+      display: none;
+    }
+
+    .note-toggle::before {
+      content: "▸ ";
+    }
+
+    .note-collapsible[open] .note-toggle::before {
+      content: "▾ ";
+    }
+
     /* ── Staging Protocol ── */
     .staging-list {
       list-style: none;
